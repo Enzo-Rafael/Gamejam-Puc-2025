@@ -10,7 +10,6 @@ public class PushNPull : MonoBehaviour
 
     private ItemGrabable objectGrabbable;
 
-
     void Start()
     {
         inputActions = new PlayerInputActions();
@@ -26,9 +25,8 @@ public class PushNPull : MonoBehaviour
             if (objectGrabbable == null)
             {
                 if (Physics.Raycast(playerCamTranform.position, playerCamTranform.forward, out RaycastHit raycastHit, pickUpDistance, pickUpLayerMask))
-
                 {
-                    //Debug.Log("achou");
+                    Debug.Log("achou");
                     if (raycastHit.transform.TryGetComponent(out objectGrabbable))
                     {
                         objectGrabbable.Grab(objectGrabPoss);
@@ -43,8 +41,6 @@ public class PushNPull : MonoBehaviour
                 objectGrabbable = null;
                  GetComponent<Move>().moveSpeed = 5f;
             }
-            
-
         }
     }
     
