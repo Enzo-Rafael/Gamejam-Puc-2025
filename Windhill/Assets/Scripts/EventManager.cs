@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-public static class EventManager
+public class EventManager
 {
     private static Dictionary<string, Action> eventDictionary = new Dictionary<string, Action>();
 
