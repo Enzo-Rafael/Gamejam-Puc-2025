@@ -14,6 +14,9 @@ public class Respawn : MonoBehaviour
     }*/
     public void RepawnPlayer()
     {
+        if(lastSpawnPoint == null){
+            lastSpawnPoint = GameObject.FindWithTag("SpawnInicial").transform;
+        }
         GetComponent<CharacterController>().enabled = false;
         transform.position = lastSpawnPoint.position;
         GetComponent<CharacterController>().enabled = true;
