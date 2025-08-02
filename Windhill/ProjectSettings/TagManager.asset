@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Interaction
   - NPC
+  - Void
   - CameraZone
   layers:
   - Default
