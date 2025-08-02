@@ -53,11 +53,9 @@ public class InteractionIcon : MonoBehaviour
 
     void OnEnable()
     {
-        Debug.Log("Animação de aparecer");
     }
 
     void OnDisable()
     {
-        Debug.Log("Animação de sumir");
     }
 }

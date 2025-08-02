@@ -6,6 +6,8 @@ public class InteractionPoint : MonoBehaviour
     [SerializeField] GameObject interactionIcon;
     [SerializeField] GameObject prefab;
 
+    [SerializeField] string eventToTrigger;
+
     void Update()
     {
         if (canInteract && Input.GetKeyDown(KeyCode.E))
@@ -37,5 +39,6 @@ public class InteractionPoint : MonoBehaviour
         Instantiate(prefab, transform.position, Quaternion.identity);
         GetComponent<BoxCollider>().enabled = false;
         interactionIcon.SetActive(false);
+        EventManager.TriggerEvent(eventToTrigger);
     }
 }

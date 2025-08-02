@@ -32,6 +32,8 @@ public class DialogueSystem : MonoBehaviour
         speakerName.text = currentDialogue.speakerName;
         dialogueText.text = currentDialogue.texts[0];
         dialoguePanel.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void NextLine()
@@ -52,5 +54,7 @@ public class DialogueSystem : MonoBehaviour
     {
         dialoguePanel.SetActive(false);
         currentDialogue = null;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }
