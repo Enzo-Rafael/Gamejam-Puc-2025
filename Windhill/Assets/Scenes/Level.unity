@@ -4437,7 +4437,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 4a74d2e22455736469bf19894de2cd77, type: 2}
+  sharedProfile: {fileID: 11400000, guid: ea475c9915de54d4fbf9c9d1991c4fa4, type: 2}
 --- !u!1 &951066668
 GameObject:
   m_ObjectHideFlags: 0
@@ -9609,7 +9609,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
