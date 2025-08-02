@@ -119,6 +119,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &227925080
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 227925081}
+  m_Layer: 0
+  m_Name: PickupPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &227925081
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227925080}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.381, z: 0.811}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 619143340}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &308696162
 GameObject:
   m_ObjectHideFlags: 0
@@ -758,6 +789,7 @@ Transform:
   m_Children:
   - {fileID: 1535043448}
   - {fileID: 694475123}
+  - {fileID: 227925081}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &619143341
@@ -773,10 +805,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamTranform: {fileID: 330585546}
-  objectGrabPoss: {fileID: 0}
+  objectGrabPoss: {fileID: 227925081}
   pickUpLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   pickUpDistance: 2
 --- !u!114 &619143342
 MonoBehaviour:
@@ -1693,7 +1725,7 @@ GameObject:
   - component: {fileID: 1984375455}
   - component: {fileID: 1984375454}
   - component: {fileID: 1984375453}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1954,6 +1986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14a5d256a7a7aa6459e8b4e0373b95b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionIcon: {fileID: 0}
   defaultDialogue: {fileID: 11400000, guid: 9368b63b0f2651b4cbcf2286a6d3497a, type: 2}
   eventDialogue: {fileID: 11400000, guid: f38258dd6c3a3a748a792f73ab4a7e0e, type: 2}
   eventToListen: npc1
