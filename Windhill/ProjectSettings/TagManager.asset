@@ -7,6 +7,7 @@ TagManager:
   - Interaction
   - NPC
   - Void
+  - CameraZone
   layers:
   - Default
   - TransparentFX
