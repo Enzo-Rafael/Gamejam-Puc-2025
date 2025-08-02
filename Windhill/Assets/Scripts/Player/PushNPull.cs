@@ -39,7 +39,7 @@ public class PushNPull : MonoBehaviour
             {
                 objectGrabbable.Drop();
                 objectGrabbable = null;
-                 GetComponent<Move>().moveSpeed = 5f;
+                GetComponent<Move>().moveSpeed = 5f;
             }
         }
     }
