@@ -1,11 +1,10 @@
 using UnityEngine;
 
-public class NPC : MonoBehaviour
+public class NPC : Interactable
 {
     [SerializeField] Dialogue defaultDialogue;
     [SerializeField] Dialogue eventDialogue;
     private Dialogue currentDialogue;
-    bool canInteract;
     [SerializeField] string eventToListen;
 
     void Start()
@@ -19,38 +18,13 @@ public class NPC : MonoBehaviour
         EventManager.Unsubscribe(eventToListen, OnEventTriggered);
     }
 
-    void Update()
-    {
-        if (canInteract && Input.GetKeyDown(KeyCode.E))
-        {
-            Interact();
-        }
-    }
-    
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            canInteract = true;
-        }
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            canInteract = false;
-        }
-    }
-
-    public void Interact()
+    public override void Interact()
     {
         DialogueSystem.instance.StartDialogue(currentDialogue);
     }
 
     private void OnEventTriggered()
     {
-        Debug.Log("aaaaaaa");
         currentDialogue = eventDialogue;
     }
 }
