@@ -1168,6 +1168,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1076255806}
     m_Modifications:
+    - target: {fileID: 62704956211052800, guid: 707e594c9d76f4743b4f625c2f3382fb, type: 3}
+      propertyPath: m_fontSize
+      value: 43.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 62704956211052800, guid: 707e594c9d76f4743b4f625c2f3382fb, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 43.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 62704956211052800, guid: 707e594c9d76f4743b4f625c2f3382fb, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 936828719519998690, guid: 707e594c9d76f4743b4f625c2f3382fb, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8584906
+      objectReference: {fileID: 0}
+    - target: {fileID: 936828719519998690, guid: 707e594c9d76f4743b4f625c2f3382fb, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7564488
+      objectReference: {fileID: 0}
+    - target: {fileID: 936828719519998690, guid: 707e594c9d76f4743b4f625c2f3382fb, type: 3}
+      propertyPath: m_Color.r
+      value: 0.44949272
+      objectReference: {fileID: 0}
     - target: {fileID: 3414333249249061736, guid: 707e594c9d76f4743b4f625c2f3382fb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1251,6 +1275,14 @@ PrefabInstance:
     - target: {fileID: 4250734451842308456, guid: 707e594c9d76f4743b4f625c2f3382fb, type: 3}
       propertyPath: m_Name
       value: Panel-Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7122839283519189602, guid: 707e594c9d76f4743b4f625c2f3382fb, type: 3}
+      propertyPath: m_fontSize
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 7122839283519189602, guid: 707e594c9d76f4743b4f625c2f3382fb, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8595079081415657195, guid: 707e594c9d76f4743b4f625c2f3382fb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
