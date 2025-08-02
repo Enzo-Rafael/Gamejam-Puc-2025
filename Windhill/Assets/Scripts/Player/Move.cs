@@ -37,12 +37,12 @@ public class Move :  MonoBehaviour
         inputActions.Player.Jump.performed += _ => jumpQueued = true;
 
         inputActions.Player.Enable();
-        LockCursor();
+        
     }
 
     void Update()
     {
-        HandleCursor();
+        
 
         Vector3 moveDir = new Vector3(inputMove.x,0,inputMove.y);
         if (controller.isGrounded && velocity.y < 0)
@@ -74,24 +74,5 @@ public class Move :  MonoBehaviour
         controller.Move((moveDir * moveSpeed + velocity) * Time.deltaTime);
     }
 
-    void HandleCursor()//Controle sobre a visibilidade do cursor
-    {
-        if (Keyboard.current.escapeKey.wasPressedThisFrame)
-            UnlockCursor();
-
-        if (Mouse.current.rightButton.wasPressedThisFrame && Cursor.lockState != CursorLockMode.Locked)
-            LockCursor();
-    }
-
-    void LockCursor()//Trava o Cursor
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
-
-    void UnlockCursor()//Destrava o cursor
-    {
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-    }
+    
 }
