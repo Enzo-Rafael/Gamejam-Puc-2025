@@ -8,6 +8,7 @@ TagManager:
   - NPC
   - Void
   - CameraZone
+  - SpawnInicial
   layers:
   - Default
   - TransparentFX
