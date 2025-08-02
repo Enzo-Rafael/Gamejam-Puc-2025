@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -11,6 +12,8 @@ public class Move :  MonoBehaviour
     public float jumpForce = 1.5f;
     public float gravity = -9.81f;
     public float rotationSmoothness  = 0.05f;
+
+    [SerializeField] private Transform camRef;
 
     [Header("Components")]
     private CharacterController controller;
@@ -43,8 +46,15 @@ public class Move :  MonoBehaviour
     void Update()
     {
         HandleCursor();
+        //camRef = FindObjectByType<CinemachineCamera>().tra
+        Vector3 camForward = camRef.forward;
+        Vector3 camRight = camRef.right;
+        camForward.y = 0; 
+        camRight.y = 0;
+        camForward.Normalize();
+        camRight.Normalize();
 
-        Vector3 moveDir = new Vector3(inputMove.x,0,inputMove.y);
+        Vector3 moveDir = camRight * inputMove.x + camForward * inputMove.y;
         if (controller.isGrounded && velocity.y < 0)
             velocity.y = -2f;
 
