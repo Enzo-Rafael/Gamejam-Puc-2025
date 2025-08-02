@@ -10,7 +10,7 @@ public class InteractionPoint : Interactable
 
     public override void Interact()
     {
-        Instantiate(prefab, transform.position, Quaternion.identity);
+        Instantiate(prefab, transform.position, transform.rotation);
         GetComponent<BoxCollider>().enabled = false;
         GameObject.Find("Player").GetComponent<Respawn>().lastSpawnPoint = spawn;
         interactionIcon.SetActive(false);
