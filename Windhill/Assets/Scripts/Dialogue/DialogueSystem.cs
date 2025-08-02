@@ -41,7 +41,7 @@ public class DialogueSystem : MonoBehaviour
         if (dialogueIndex < currentDialogue.texts.Length - 1)
         {
             dialogueIndex++;
-            dialogueText.text = currentDialogue.texts[0];
+            dialogueText.text = currentDialogue.texts[dialogueIndex];
         }
         else
         {

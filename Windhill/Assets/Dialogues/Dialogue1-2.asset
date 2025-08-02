@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 94c1c5fef7df6b0408d4546efbdbdfd6, type: 3}
-  m_Name: NewDialogue
+  m_Name: Dialogue1-2
   m_EditorClassIdentifier: 
-  speakerName: "Jo\xE3o"
+  speakerName: "Doninha aleat\xF3ria (grata)"
   texts:
-  - Tralalelo tralala
+  - "N\xE3o acredito! Voc\xEA n\xE3o s\xF3 trouxe energia para c\xE1, como tamb\xE9m
+    de forma sustent\xE1vel. Certeza que existe uma ODS pra isso"
   nextDialogue: {fileID: 0}
