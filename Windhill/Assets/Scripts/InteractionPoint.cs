@@ -11,6 +11,7 @@ public class InteractionPoint : Interactable
     public override void Interact()
     {
         Instantiate(prefab, transform.position, transform.rotation);
+        GameManager.instance.addCatavento();
         GetComponent<BoxCollider>().enabled = false;
         GameObject.Find("Player").GetComponent<Respawn>().lastSpawnPoint = spawn;
         interactionIcon.SetActive(false);
