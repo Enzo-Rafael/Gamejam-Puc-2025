@@ -3,6 +3,7 @@ using UnityEngine;
 public class InteractionPoint : Interactable
 {
     [SerializeField] GameObject prefab;
+    [SerializeField] Light[] lightsToToggle;
 
     [SerializeField] string eventToTrigger;
 
@@ -12,5 +13,9 @@ public class InteractionPoint : Interactable
         GetComponent<BoxCollider>().enabled = false;
         interactionIcon.SetActive(false);
         EventManager.TriggerEvent(eventToTrigger);
+        foreach(Light l in lightsToToggle)
+        {
+            l.enabled = true;
+        }
     }
 }
