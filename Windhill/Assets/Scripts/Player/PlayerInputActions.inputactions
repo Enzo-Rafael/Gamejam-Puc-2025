@@ -15,15 +15,6 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Look",
-                    "type": "Value",
-                    "id": "1da30d16-ae88-4d6e-a946-2afd322c0f75",
-                    "expectedControlType": "Delta",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
                     "name": "Jump",
                     "type": "Button",
                     "id": "51ba3a74-ecad-4d22-a9cf-dd94d2a0239f",
@@ -36,6 +27,24 @@
                     "name": "UI",
                     "type": "Button",
                     "id": "9d70fe7b-85a4-4f0a-b4f1-653abfee98cd",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Interaction_Dialogue",
+                    "type": "Button",
+                    "id": "d1d28325-e43b-4dd9-a6c9-e884b9b78d04",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Interaction",
+                    "type": "Button",
+                    "id": "9cd297c7-a8e6-4bb0-aa01-ed7c2b0674b3",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -111,23 +120,34 @@
                 },
                 {
                     "name": "",
-                    "id": "a6617900-c836-46f1-bccc-fd4abd50856f",
-                    "path": "<Mouse>/delta",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Look",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "52015729-da8b-4c4c-913c-31ab51c200aa",
                     "path": "<Keyboard>/m",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "UI",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "437fc7fb-f4c9-4412-92ab-d1df1c7d60d9",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interaction_Dialogue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "99cabaaa-9dca-4e94-a749-fbc940331468",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interaction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
