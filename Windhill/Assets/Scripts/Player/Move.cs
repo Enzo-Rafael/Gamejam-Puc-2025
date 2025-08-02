@@ -12,8 +12,10 @@ public class Move :  MonoBehaviour
     public float gravity = -9.81f;
     public float rotationSmoothness  = 0.05f;
 
+    [Header("Components")]
     private CharacterController controller;
     private PlayerInputActions inputActions;
+    [SerializeField] Animator anim;
 
     private Vector2 inputMove;
 
@@ -47,18 +49,26 @@ public class Move :  MonoBehaviour
             velocity.y = -2f;
 
         if (jumpQueued && controller.isGrounded)
+        {
             velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
+            anim.SetTrigger("Jump");
+        }
 
         jumpQueued = false;
         velocity.y += gravity * Time.deltaTime;
 
         if (moveDir != Vector3.zero)
         {
+            anim.SetBool("Walking", true);
             Quaternion targetRotation = Quaternion.LookRotation(moveDir);
-        
-           // Aplica suavização usando Slerp
+
+            // Aplica suavização usando Slerp
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSmoothness * Time.deltaTime);
             //transform.forward = moveDir;
+        }
+        else
+        {
+            anim.SetBool("Walking", false);
         }
 
         controller.Move((moveDir * moveSpeed + velocity) * Time.deltaTime);
