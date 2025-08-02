@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94c1c5fef7df6b0408d4546efbdbdfd6, type: 3}
+  m_Name: Dialogue1
+  m_EditorClassIdentifier: 
+  speakerName: "Doninha aleat\xF3ria"
+  texts:
+  - "Ol\xE1 viajante. N\xE3o \xE9 seguro seguir em frente por agora. Est\xE1 muito
+    escuro devido \xE0 falta de energia na regi\xE3o."
+  - "Mas caso ainda queira seguir em frente, vou entender. Afinal, essa montanha
+    \xE9 famosa pela vista l\xE1 de cima"
+  nextDialogue: {fileID: 0}
