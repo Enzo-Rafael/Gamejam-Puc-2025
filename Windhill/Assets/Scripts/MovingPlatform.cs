@@ -13,7 +13,7 @@ public class MovingPlatform : MonoBehaviour
         startPos = transform.position;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         // Movimento horizontal
         if (movingRight)
@@ -32,21 +32,22 @@ public class MovingPlatform : MonoBehaviour
         }
     }
 
-    // O player é "filho" da plataforma → acompanha o movimento
-    private void OnTriggerEnter(Collider other)
+   
+    private void OnCollisionEnter(Collision other)
     {
         
-        if (other.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
             other.transform.SetParent(this.transform);
             Debug.Log("entrou");
         }
     }
 
-    // Ao sair, deixa de ser filho
-    private void OnTriggerExit(Collider other)
+    
+    private void OnCollisionExit(Collision other)
     {
-        if (other.CompareTag("Player"))
+        Debug.Log("saiu");
+        if (other.gameObject.CompareTag("Player"))
         {
             other.transform.SetParent(null);
         }

@@ -1125,7 +1125,9 @@ GameObject:
   - component: {fileID: 105051137}
   - component: {fileID: 105051136}
   - component: {fileID: 105051135}
-  m_Layer: 0
+  - component: {fileID: 105051138}
+  - component: {fileID: 105051139}
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1221,6 +1223,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 105051133}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &105051138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105051133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4185e748b7e4ab44b00f57b4f3c668d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lerpSpeed: 2
+--- !u!54 &105051139
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105051133}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0
 --- !u!1 &119955071
 GameObject:
   m_ObjectHideFlags: 0
@@ -3653,7 +3695,8 @@ GameObject:
   - component: {fileID: 640044707}
   - component: {fileID: 640044706}
   - component: {fileID: 640044705}
-  m_Layer: 0
+  - component: {fileID: 640044709}
+  m_Layer: 3
   m_Name: FLCamera-Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3748,12 +3791,51 @@ Transform:
   m_GameObject: {fileID: 640044704}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.9734992, z: -0.22869064, w: 0}
-  m_LocalPosition: {x: 75.1, y: 10.33, z: 56.370003}
+  m_LocalPosition: {x: 47.9, y: 16.14, z: 50.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 26.44, y: 180, z: 0}
+--- !u!114 &640044709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640044704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbe43d662878a7c43bcd44d43c9e2094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollideAgainst:
+    serializedVersion: 2
+    m_Bits: 0
+  IgnoreTag: 
+  TransparentLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  MinimumDistanceFromTarget: 0.3
+  AvoidObstacles:
+    Enabled: 1
+    DistanceLimit: 0
+    MinimumOcclusionTime: 0
+    CameraRadius: 0.4
+    UseFollowTarget:
+      Enabled: 0
+      YOffset: 0
+    Strategy: 0
+    MaximumEffort: 4
+    SmoothingTime: 0
+    Damping: 0.4
+    DampingWhenOccluded: 0.2
+  ShotQualityEvaluation:
+    Enabled: 0
+    OptimalDistance: 10
+    NearLimit: 5
+    FarLimit: 30
+    MaxQualityBoost: 0.2
 --- !u!1 &770891804
 GameObject:
   m_ObjectHideFlags: 0
@@ -5344,7 +5426,7 @@ Transform:
   m_GameObject: {fileID: 1244834294}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.9734992, z: -0.22869064, w: 0}
-  m_LocalPosition: {x: 75.1, y: 10.33, z: 56.370003}
+  m_LocalPosition: {x: 47.9, y: 16.14, z: 50.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5848,15 +5930,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2140361527929659518, guid: c8967e0ee17897d4097524d8aafd0b9f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 75.1
+      value: 47.9
       objectReference: {fileID: 0}
     - target: {fileID: 2140361527929659518, guid: c8967e0ee17897d4097524d8aafd0b9f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.39
+      value: 9.2
       objectReference: {fileID: 0}
     - target: {fileID: 2140361527929659518, guid: c8967e0ee17897d4097524d8aafd0b9f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 43.4
+      value: 37.6
       objectReference: {fileID: 0}
     - target: {fileID: 2140361527929659518, guid: c8967e0ee17897d4097524d8aafd0b9f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5890,6 +5972,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3417056660865672827, guid: c8967e0ee17897d4097524d8aafd0b9f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3544520942899993436, guid: c8967e0ee17897d4097524d8aafd0b9f, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -5917,6 +6003,10 @@ PrefabInstance:
     - target: {fileID: 6178563583378728077, guid: c8967e0ee17897d4097524d8aafd0b9f, type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6507406954563245923, guid: c8967e0ee17897d4097524d8aafd0b9f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9525,6 +9615,8 @@ GameObject:
   - component: {fileID: 6329133908830090269}
   - component: {fileID: 2693555922854047508}
   - component: {fileID: 6122774940355474089}
+  - component: {fileID: 6329133908830090270}
+  - component: {fileID: 6329133908830090271}
   m_Layer: 0
   m_Name: Plane.016
   m_TagString: Untagged
@@ -9817,6 +9909,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7016158112683744796}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6329133908830090270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5205222652407637352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b830700c3fffc04087554b8448a5b3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  distance: 3
+--- !u!65 &6329133908830090271
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5205222652407637352}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.059466932, y: 0.03680221, z: 0.114153735}
+  m_Center: {x: -0.0029454026, y: -0.00016670206, z: 0.0000000018626448}
 --- !u!33 &6532319528985893802
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9862,6 +9989,7 @@ GameObject:
   - component: {fileID: 4361935671828609221}
   - component: {fileID: 7924646835344873019}
   - component: {fileID: 6161582295199770105}
+  - component: {fileID: 7924646835344873020}
   m_Layer: 0
   m_Name: Plane.011
   m_TagString: Untagged
@@ -10193,6 +10321,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6862048310660534469}
   m_Mesh: {fileID: 5305871256624515941, guid: 9996696ad5190fc418eda714208873a6, type: 3}
+--- !u!64 &7924646835344873020
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6862048310660534469}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5305871256624515941, guid: 9996696ad5190fc418eda714208873a6, type: 3}
 --- !u!33 &8051456495904088039
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -10214,7 +10364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  distance: 0
+  distance: 2
 --- !u!54 &8051456495904088042
 Rigidbody:
   m_ObjectHideFlags: 0

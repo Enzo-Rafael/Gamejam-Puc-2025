@@ -12,12 +12,16 @@ public class ItemGrabable : MonoBehaviour
     public void Grab(Transform objectGrabPointTranform)
     {
         this.objectGrabPointTranform = objectGrabPointTranform;
-        objectRigidbogy.useGravity = false;
+        objectRigidbogy.useGravity = true;
+        objectRigidbogy.constraints = RigidbodyConstraints.FreezeRotationX|RigidbodyConstraints.FreezeRotationY|RigidbodyConstraints.FreezeRotationZ;
+        
     }
     public void Drop()
     {
         this.objectGrabPointTranform = null;
-        objectRigidbogy.useGravity = true;
+        objectRigidbogy.useGravity = false;
+        objectRigidbogy.constraints = RigidbodyConstraints.FreezePositionX|RigidbodyConstraints.FreezePositionY|RigidbodyConstraints.FreezePositionZ;
+        objectRigidbogy.constraints = RigidbodyConstraints.FreezeRotationX|RigidbodyConstraints.FreezeRotationY|RigidbodyConstraints.FreezeRotationZ;
     }
     private void FixedUpdate()
     {

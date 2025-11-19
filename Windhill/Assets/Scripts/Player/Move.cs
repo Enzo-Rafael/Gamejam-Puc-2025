@@ -50,7 +50,7 @@ public class Move :  MonoBehaviour
         
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Vector3 camForward = camRef.forward;
         Vector3 camRight = camRef.right;
