@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -12,6 +13,12 @@ public class Move :  MonoBehaviour
     public float jumpForce = 1.5f;
     public float gravity = -9.81f;
     public float rotationSmoothness  = 0.05f;
+    public bool dashing = true;
+    public float dashingPower = 20f;
+    public float dashingTime= 0.3f;
+    public float dashingCooldown= 0.75f;
+    private Vector3 knockbackVelocity;
+    private float knockbackTimer;
 
     [SerializeField] private Transform camRef;
 
@@ -52,6 +59,11 @@ public class Move :  MonoBehaviour
         camForward.Normalize();
         camRight.Normalize();
 
+        if (Input.GetKeyDown(KeyCode.LeftShift) && dashing )
+        {
+            StartCoroutine(Dash());
+        }
+
         Vector3 moveDir = camRight * inputMove.x + camForward * inputMove.y;
         if (controller.isGrounded && velocity.y < 0)
             velocity.y = -2f;
@@ -80,5 +92,35 @@ public class Move :  MonoBehaviour
         }
 
         controller.Move((moveDir * moveSpeed + velocity) * Time.deltaTime);
+        
+        if (knockbackTimer > 0)
+        {
+            knockbackTimer -= Time.deltaTime;
+        }
+        else
+        {
+            knockbackVelocity = Vector3.zero;
+        }
+
+        // Aplicar gravidade (opcional, caso não tenha no seu controller atual)
+        knockbackVelocity.y += gravity * Time.deltaTime;
+
+        controller.Move(knockbackVelocity * Time.deltaTime);
+    }
+     
+    public void ApplyKnockback(Vector3 direction, float force, float duration)
+    {
+        knockbackVelocity = direction * force;
+        knockbackTimer = duration;
+    }
+
+    private IEnumerator Dash()
+    {
+        dashing = false;
+        velocity = new Vector3(transform.forward.x*dashingPower,0f, transform.forward.z*dashingPower);
+        yield return new WaitForSeconds(dashingTime);
+        velocity = Vector3.zero;
+        yield return new WaitForSeconds(dashingCooldown);
+        dashing = true;
     }
 }
